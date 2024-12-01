@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdexcept>
 
 using namespace std;
 
@@ -14,7 +15,13 @@ int main() {
     int liczba;
     cin >> liczba;
     cout << "Wczytano: " << liczba << endl;
-     if (czy_doskonala(liczba)) {
+    if (czy_doskonala(liczba)) {
+    if (liczba <= 0) {
+        cerr << "Podano liczbe niedodatnia!" << endl;
+        return 1;
+    }
+    cout << "Wczytano: " << liczba;
+    if (czy_doskonala(liczba)) {
         cout << " - liczba doskonala" << endl;
     } else {
         cout << " - nie jest liczba doskonala" << endl;
